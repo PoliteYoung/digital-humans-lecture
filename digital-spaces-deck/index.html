@@ -336,4 +336,19 @@ document.addEventListener('contextmenu',e=>{if(e.target.closest('a,button,input,
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)b.blur();});
 let lastWheel=0;document.addEventListener('wheel',e=>{if(document.querySelector('.overlay.open')||Reveal.isPaused())return;const now=Date.now();if(Math.abs(e.deltaY)<4||now-lastWheel<550)return;lastWheel=now;e.deltaY>0?Reveal.next():Reveal.prev();},{passive:true});
 window.addEventListener('beforeunload',()=>{clearInterval(presenterTimer);if(presenter&&!presenter.closed)presenter.close();});
+</script><script id="part1-handoff">
+// Seamless hand-off back to Part 1 (Digital Humans). GitHub Pages: parent folder; NAS/local: sibling folder.
+(function(){
+  var PART1 = /github\.io$/.test(location.hostname) ? '../?last' : '../digital-humans-deck/index.html?last';
+  var leaving=false;
+  function goPart1(){ if(leaving) return; leaving=true;
+    var f=document.createElement('div'); f.style.cssText='position:fixed;inset:0;background:#0d1117;opacity:0;transition:opacity .35s;z-index:99999';
+    document.body.appendChild(f); requestAnimationFrame(function(){ f.style.opacity=1; }); setTimeout(function(){ location.href=PART1; },360); }
+  function atStart(){ return /^\?|^$/.test(location.search.replace(/print-pdf/,'X'))&&!/print-pdf|receiver/.test(location.search)
+    && Reveal.isFirstSlide() && !Reveal.availableFragments().prev && !Reveal.isOverview() && !document.querySelector('.overlay.open'); }
+  window.addEventListener('keydown',function(e){ if(!atStart()||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(['ArrowLeft','ArrowUp','PageUp','p','P'].indexOf(e.key)>=0){ e.preventDefault(); e.stopImmediatePropagation(); goPart1(); } },true);
+  window.addEventListener('contextmenu',function(e){ if(!atStart()||e.target.closest('a,button,input,video,.overlay')) return; e.preventDefault(); e.stopImmediatePropagation(); goPart1(); },true);
+  var prev=document.getElementById('prev'); if(prev) prev.addEventListener('click',function(e){ if(atStart()){ e.stopImmediatePropagation(); goPart1(); } },true);
+})();
 </script></body></html>

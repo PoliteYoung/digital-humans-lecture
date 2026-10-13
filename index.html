@@ -223,10 +223,9 @@ svg.arm{width:100%;height:auto;display:block;}
 
 .spot{display:flex;gap:36px;align-items:flex-start;margin:0 -40px;}
 
-/* last-slide lab link (unobtrusive) */
-.labcard{position:absolute;right:120px;bottom:24px;display:flex;gap:10px;align-items:center;opacity:.55;font-size:18px;color:var(--dim);}
-.labcard img{width:56px;height:56px;border-radius:4px;display:block;}
-.labcard a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--dim);}
+/* last slide: link to Part 2 (colleague's deck) */
+.reveal .next-part{position:absolute;right:120px;bottom:30px;font-size:22px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 18px;opacity:.7;}
+.reveal .next-part:hover{opacity:1;color:var(--rep);border-color:var(--rep);}
 
 /* slide 10 pipeline */
 .p10-wrap{display:grid;grid-template-columns:290px 1fr;gap:10px;align-items:center;}
@@ -659,6 +658,7 @@ And realism is not the same as trust. A very realistic face can feel creepy. Tha
       <p class="muted tiny" style="margin:0;">Yao-Dong Yang · DREAMS · politeydy@hkust-gz.edu.cn</p>
     </div>
   </div>
+  <a id="next-part" class="next-part" href="../digital-spaces-deck/index.html">Part 2 · Digital Spaces →</a>
   <aside class="notes">
 [26:00–27:00]
 Here's everything on one map.
@@ -669,7 +669,7 @@ The grey names are more examples, for you to look up later. Almost every cell ha
 For example, Meshy and Tripo from VAST generate meshes from text or images. Wan-Animate drives a photo with a skeleton.
 One sentence to remember. Representation decides how it looks. Driving decides what it can do.
 Remember the three clips from the start? Wukong, Wan, DEGAS. Now you can place each one on this map.
-→ Now our next guest will show you Gaussian scenes and digital humans, live and interactive. Thank you!
+→ (Click "Part 2" in the bottom-right corner to open my colleague's slides.) Now my colleague will take us from digital humans to digital spaces. Thank you!
   </aside>
 </section>
 
@@ -741,6 +741,26 @@ Remember the three clips from the start? Wukong, Wan, DEGAS. Now you can place e
     img.src = layer.dataset.img;
   });
 
+  // ---- Seamless hand-off to Part 2 (colleague's deck) ----
+  // GitHub Pages: Part 2 lives in ./digital-spaces-deck/ ; NAS/local: sibling folder ../digital-spaces-deck/
+  var PART2 = /github\.io$/.test(location.hostname) ? 'digital-spaces-deck/' : '../digital-spaces-deck/index.html';
+  var np=document.getElementById('next-part'); if(np) np.href=PART2;
+  var leaving=false;
+  function goPart2(){
+    if(leaving) return; leaving=true;
+    var f=document.createElement('div');
+    f.style.cssText='position:fixed;inset:0;background:#0d1117;opacity:0;transition:opacity .35s;z-index:99999';
+    document.body.appendChild(f); requestAnimationFrame(function(){ f.style.opacity=1; });
+    setTimeout(function(){ location.href=PART2; },360);
+  }
+  function atEnd(){ return !isReceiver && !isPrint && Reveal.isLastSlide() && !Reveal.availableFragments().next && !Reveal.isOverview(); }
+  window.addEventListener('keydown',function(e){
+    if(!atEnd()||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(['ArrowRight','ArrowDown','PageDown',' ','n','N'].indexOf(e.key)>=0){ e.preventDefault(); e.stopImmediatePropagation(); goPart2(); }
+  },true);
+  // Arriving back from Part 2 (?last): jump to the final slide
+  if(/[?&]last\b/.test(location.search)) Reveal.on('ready',function(){ Reveal.slide(Reveal.getTotalSlides()-1); });
+
   Reveal.initialize({
     width: 1920, height: 1080, margin: 0.03,
     center: false, hash: true,
@@ -759,6 +779,7 @@ Remember the three clips from the start? Wukong, Wan, DEGAS. Now you can place e
     document.addEventListener('click', function(e){
       if (e.button !== 0 || Reveal.isOverview()) return;
       if (e.target.closest('video, .vid, a, button, input')) return;
+      if (atEnd()) { goPart2(); return; }
       Reveal.next();
     });
     // Mouse wheel: step by step normally; whole slides in the overview (Esc).
@@ -769,7 +790,7 @@ Remember the three clips from the start? Wukong, Wan, DEGAS. Now you can place e
       lastWheel = now;
       var fwd = e.deltaY > 0;
       if (Reveal.isOverview()) { fwd ? Reveal.right() : Reveal.left(); }
-      else { fwd ? Reveal.next() : Reveal.prev(); }
+      else { if (fwd && atEnd()) { goPart2(); return; } fwd ? Reveal.next() : Reveal.prev(); }
     }, { passive: true });
     document.addEventListener('contextmenu', function(e){
       if (Reveal.isOverview() || e.target.closest('video, .vid')) return;

@@ -38,3 +38,6 @@ Layout Landscape, Margins None, enable "Background graphics".
 - [ ] Test S (speaker view) on the classroom computer; allow pop-ups if the browser asks
 - [ ] Fill in your email on the last slide
 - [ ] Export the PDF backup
+
+## Hand-off to Part 2
+The last slide has a "Part 2 · Digital Spaces →" button (bottom right). It opens `../digital-spaces-deck/index.html`, so keep both deck folders side by side (as on the NAS). Online it opens the Part 2 page of the same site.
