@@ -1,0 +1,22 @@
+# GSdemo tutorial chapters
+
+- 00:00 — Digital Humans in Gaussian Environments
+- 00:19 — Find the official Unity packages
+- 00:43 — Permission comes before distribution
+- 01:06 — Choose your static environment
+- 01:26 — SOG is not the Unity import file
+- 01:48 — Get an authorized dynamic sequence
+- 02:12 — Create a desktop baseline in Unity Hub
+- 02:31 — Match the tested desktop configuration
+- 02:53 — Use Package Manager, not Assets/Import Package
+- 03:17 — Verify dependencies and initialize Addressables
+- 03:39 — Import the static Gaussian PLY
+- 04:01 — Keep dynamic metadata and blocks together
+- 04:25 — Calibrate one shared coordinate space
+- 04:49 — Wire the scene references
+- 05:10 — Interaction logic: camera-relative navigation
+- 05:28 — Interaction logic: presence and teleport
+- 05:50 — Start at the entrance
+- 06:01 — Teleport, reveal and loop the performer
+- 06:22 — Return and confirm deactivation
+- 06:31 — Now, bring this scene into VR.
