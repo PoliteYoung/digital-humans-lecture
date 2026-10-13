@@ -3,18 +3,23 @@
 Guest lecture for **Interactive AI Systems: Design & Implementation** (HKUST-GZ)
 Yao-Dong Yang · CMA PhD Student · Technician, DREAMS · politeydy@hkust-gz.edu.cn
 
-**▶ View the slides:** https://politeyoung.github.io/digital-humans-lecture/
+Two back-to-back guest segments (~30 min each):
+
+| Part | Topic | Slides |
+|---|---|---|
+| 1 | **Digital Humans: From Hand-Crafted to Generated** — Yao-Dong Yang | https://politeyoung.github.io/digital-humans-lecture/ |
+| 2 | **Digital Spaces** (DREAMS) | https://politeyoung.github.io/digital-humans-lecture/digital-spaces-deck/ |
 
 ## Hands-on lab (after class)
 
-Bring a Gaussian scene into VR and run it on your PICO headset.
+Bring a Gaussian scene into VR and run it on your PICO headset. Linked from the last slide of Part 2.
 
 - 📄 **Lab guide:** [lab/STUDENT_LAB_GUIDE.md](lab/STUDENT_LAB_GUIDE.md)
 - 🎬 **Tutorial video (6:43):** [lab/TutorialVideo/GSdemo_Tutorial_EN.mp4](lab/TutorialVideo/GSdemo_Tutorial_EN.mp4) · [chapters](lab/TutorialVideo/CHAPTERS.md) · [subtitles (.srt)](lab/TutorialVideo/GSdemo_Tutorial_EN.srt)
 
 ## Presenting the slides
 
-Open `index.html` in Chrome or Edge (works offline after cloning), or use the link above.
+Part 1: open `index.html`. Part 2: open `digital-spaces-deck/index.html` (single self-contained file; see its README for keys and notes). Both work offline in Chrome or Edge.
 
 | Key | Action |
 |---|---|

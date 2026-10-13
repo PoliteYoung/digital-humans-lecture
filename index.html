@@ -561,7 +561,7 @@ Hint if nobody answers: think about where the motion comes from.
       <p>Gaussians attached to an <b>SMPL</b> body → follows <b>new</b> poses.</p>
     </div>
   </div>
-  <div class="test">The test: can it perform a motion that was <em>never recorded</em>?</div>
+  <div class="test">The test: can it perform a motion <em>this person never performed</em>?</div>
   <p class="tiny muted" style="margin-top:18px;">Side note: volumetric capture studios are used for concerts, VR, and virtual production.</p>
   <div class="cite"><b>Jiang et al.</b> Robust Dual Gaussian Splatting for Immersive Human-centric Volumetric Videos (DualGS). SIGGRAPH Asia 2024. · <b>Shao et al.</b> DEGAS: Detailed Expressions on Full-Body Gaussian Avatars. 3DV 2025.</div>
   <aside class="notes">
@@ -571,9 +571,13 @@ Think of it as a 3D recording. Many cameras film a real performance.
 You can look from any angle. But you can only play, pause, and scrub. Like a video.
 Video two was DEGAS. It's a 3D digital human.
 Think of it as a puppet. The Gaussians are attached to an SMPL body.
-So you can give it a new pose, and it follows. Even a pose it has never seen.
-So here's the test. Can it perform a motion that was never recorded?
-If yes, it's a digital human you can drive. If no, it's a recording.
+So you can give it a new pose sequence, theta, and it follows.
+Look at the video again. The motion came from another person, a TED speaker. The man on the right never made those moves.
+So here's the test. Can it perform a motion this person never performed?
+DualGS: no. It can only replay what was captured. DEGAS: yes.
+And theta can come from anywhere: another person's motion capture, a motion library, or an AI model that creates new motion from text or speech.
+That's the power of a parametric body. Driving is separated from the data.
+To be honest: poses far from what was captured still look worse. Fingers, big bends, loose clothing.
 For an AI agent, we need the puppet. The agent decides what to do next, live.
 Side note, SKIPPABLE: volumetric recording is still very useful. Capture studios use it for concerts, VR experiences, and film production.
 → So how do we connect the puppet to an LLM? Let's look at the full system.
@@ -655,10 +659,6 @@ And realism is not the same as trust. A very realistic face can feel creepy. Tha
       <p class="muted tiny" style="margin:0;">Yao-Dong Yang · DREAMS · politeydy@hkust-gz.edu.cn</p>
     </div>
   </div>
-  <div class="labcard">
-    <img src="images/lab_qr.png" alt="QR code: lab guide">
-    <span>Lab: <a href="https://github.com/PoliteYoung/digital-humans-lecture/blob/main/lab/STUDENT_LAB_GUIDE.md" target="_blank" rel="noopener">guide</a> · <a href="lab/TutorialVideo/GSdemo_Tutorial_EN.mp4" target="_blank" rel="noopener">video</a></span>
-  </div>
   <aside class="notes">
 [26:00–27:00]
 Here's everything on one map.
@@ -669,7 +669,6 @@ The grey names are more examples, for you to look up later. Almost every cell ha
 For example, Meshy and Tripo from VAST generate meshes from text or images. Wan-Animate drives a photo with a skeleton.
 One sentence to remember. Representation decides how it looks. Driving decides what it can do.
 Remember the three clips from the start? Wukong, Wan, DEGAS. Now you can place each one on this map.
-(Optional, point to the bottom-right corner.) The hands-on lab guide and a tutorial video are linked there, and in the course repo.
 → Now our next guest will show you Gaussian scenes and digital humans, live and interactive. Thank you!
   </aside>
 </section>
