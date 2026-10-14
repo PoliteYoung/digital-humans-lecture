@@ -498,16 +498,15 @@ To use it in a game engine, we extract a mesh from it. Now we're back to triangl
 (Point to the mesh.) This is the mesh we reconstructed from those photos. First the bare geometry, then the texture.
 The quality is good. But it's slow. Slow to train, and slow to render.
 (Click.) Then, in 2023, came 3D Gaussian Splatting. Same photos. Different representation.
-(Point to the bottom row.) I trained these Gaussians on the same studio photos: about ninety-five thousand blobs, half an hour on a laptop.
+(Point to the bottom row.) I trained these Gaussians on the same studio photos, in about half an hour on a laptop.
 Left: every blob drawn as a small ellipsoid. Right: the same blobs, splatted into an image.
-Forget the network. The scene is millions of small blobs.
+Forget the network. The scene is just lots and lots of small blobs.
 Each blob has a position, a size, a color, and a transparency.
 We render the blobs into an image, compare with the real photo, and use gradient descent.
 So it's like training a model. But the parameters are blobs.
 (Point to the last picture.) And this is the rendered result. In real time. That's why it took off so fast.
 Remember the title slide? Photo, Gaussians, rendered. This is how it works.
-Our next guest will show you real Gaussian scenes, live.
-→ Now, a small test. Two videos of the same person.
+→ With Gaussians, we can build two kinds of digital humans. Let's look at both.
   </aside>
 </section>
 
@@ -522,7 +521,7 @@ Our next guest will show you real Gaussian scenes, live.
   <aside class="notes">
 [17:30–19:00]
 (Both videos play on their own.)
-Both videos use Gaussians. Both show real-looking people in motion.
+Here are the two kinds. Both use Gaussians. Both show real-looking people in motion.
 Video one: a student in a VR headset, watching a concert. The musicians are real people, captured in 3D. He can walk around them and see them from any angle.
 Video two: you saw it at the start. Another person copies the motion of the man in the suit.
 ASK: What's the fundamental difference? Take twenty seconds. Talk to your neighbor if you want.
@@ -615,7 +614,6 @@ So which body should you use? It depends.
 Real-time dialogue, or VR: use a traditional mesh. It's the most mature. Unity handles it well.
 Offline content, like a marketing video: 2D generation is fine.
 A specific real person, high fidelity: reconstruction, like Gaussians. But driving it in real time is still an open problem.
-That's exactly what our next guest works on.
 → Before I hand over, one minute on responsibility.
   </aside>
 </section>
@@ -667,7 +665,9 @@ The grey names are more examples, for you to look up later. Almost every cell ha
 For example, Meshy and Tripo from VAST generate meshes from text or images. Wan-Animate drives a photo with a skeleton.
 One sentence to remember. Representation decides how it looks. Driving decides what it can do.
 Remember the three clips from the start? Wukong, Wan, DEGAS. Now you can place each one on this map.
-→ (Click "Part 2" in the bottom-right corner to open my colleague's slides.) Now my colleague will take us from digital humans to digital spaces. Thank you!
+That's all from me. Thank you!
+Next, my colleague Mr. Luo will take us from digital humans to digital spaces.
+→ (Click "Part 2" in the bottom-right corner, or just press →.)
   </aside>
 </section>
 
