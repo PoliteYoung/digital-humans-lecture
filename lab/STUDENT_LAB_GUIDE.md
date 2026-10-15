@@ -9,8 +9,6 @@
 3. **Add one interaction:** teleport, an info panel, or proximity activation.
 4. **Bring it into VR.** Put on your headset and check head tracking and your controls.
 
-Start small. A simple scene that works beats a complex one that doesn't.
-
 ## Resources
 
 - **Tutorial video (5 min):** [GSdemo_Tutorial_EN.mp4](TutorialVideo/GSdemo_Tutorial_EN.mp4) · [Chapters](TutorialVideo/CHAPTERS.md)
