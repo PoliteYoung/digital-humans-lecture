@@ -2,14 +2,14 @@
 
 **Goal:** Make a small Unity VR experience and try it on **PICO** using the workflow taught earlier.
 
-**A standalone build or PC streaming are both welcome.** Choose any Unity version, render pipeline, XR tools or permitted plugins that work for you. Getting your own VR experience running is already a good achievement.
+Choose any Unity version, render pipeline, XR tools or permitted plugins that work for you. Getting your own VR experience running is already a good achievement.
 
 ## What to try
 
 1. Import a permitted Gaussian scene and check its orientation, scale and viewpoint. You are encouraged to choose a different environment.
 2. If feasible and permitted, add a volumetric performer such as Bass. Move around it and view it from different sides to show that it is 3D, not flat video.
 3. Try one simple interaction: teleport, an information panel or proximity activation.
-4. Experience your scene in VR on PICO, **through a build or streaming**. Check head tracking and your intended controls.
+4. Bring your scene into VR on PICO. Check head tracking and your intended controls.
 
 Start small and simplify when needed. A small working scene is better than an unfinished complex project. Explain any features you could not get working.
 
@@ -26,8 +26,8 @@ Check asset/plugin permissions before use or sharing. Confirm DynGsplat student-
 
 ## Share what you made
 
-- A short video of your scene being experienced in VR on PICO; **build and streaming demonstrations both count**.
-- Your playable build **or** project/run instructions, where sharing is permitted. An APK is optional.
+- A short video of your scene being experienced in VR on PICO.
+- Your project or instructions for trying it, where sharing is permitted.
 - A short **English README**: what you made, how to try it, resource sources and any limitations.
 
 No fixed software version, numerical performance target or research evaluation is required. **The main success is making something that works in VR.**
