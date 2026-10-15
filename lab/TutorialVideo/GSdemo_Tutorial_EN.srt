@@ -1,478 +1,243 @@
 1
-00:00:00,650 --> 00:00:06,186
-In this lab, we place a recorded digital human
-inside a Gaussian reconstruction and add
+00:00:00,650 --> 00:00:05,816
+We’ll combine a Gaussian-reconstructed
+environment with a volumetric performer in Unity,
 
 2
-00:00:06,186 --> 00:00:07,663
-a simple interactive tour.
+00:00:05,816 --> 00:00:09,103
+then add navigation, proximity activation and
+teleportation.
 
 3
-00:00:07,663 --> 00:00:12,461
-We will find the official resources, configure
-Unity, import and calibrate the assets,
+00:00:12,650 --> 00:00:15,198
+Gsplat renders the static environment.
 
 4
-00:00:12,461 --> 00:00:14,675
-and briefly inspect the interaction logic.
+00:00:15,198 --> 00:00:17,746
+DynGsplat plays the dynamic sequence.
 
 5
-00:00:14,675 --> 00:00:18,735
-The final step is your challenge: bring the
-experience into PICO.
+00:00:17,746 --> 00:00:21,823
+DualGS provides the human reconstruction and data
+workflow.
 
 6
-00:00:20,350 --> 00:00:25,750
-Start with the official Gsplat Unity renderer and
-the HiFi Human DynGsplat repository.
+00:00:24,650 --> 00:00:30,077
+The first option is to use pretrained Gaussian
+PLY models linked in the official 3DGS
 
 7
-00:00:25,750 --> 00:00:31,150
-Highlight the Code menu and Download ZIP, or use
-the documented repository installation
+00:00:30,077 --> 00:00:30,439
+repository.
 
 8
-00:00:31,150 --> 00:00:31,565
-route.
+00:00:32,650 --> 00:00:35,907
+The second option is to get a scene from
+SuperSplat.
 
 9
-00:00:31,565 --> 00:00:35,719
-Gsplat renders the static scene; DynGsplat adds
-compressed sequence playback.
+00:00:35,907 --> 00:00:38,513
+The DREAMS lab used here is available there.
 
 10
-00:00:35,719 --> 00:00:39,042
-We only point out the acquisition locations here.
+00:00:42,650 --> 00:00:48,425
+For a SOG scene, open it in the SuperSplat
+editor, choose PLY in the export panel, and
 
 11
-00:00:39,042 --> 00:00:42,781
-No plugins or assets are downloaded during this
-recording.
+00:00:48,425 --> 00:00:49,783
+turn off Compress PLY.
 
 12
-00:00:44,383 --> 00:00:48,346
-A public repository is not an unrestricted
-classroom license.
+00:00:54,650 --> 00:01:00,001
+You can also create your own scene with a phone,
+using apps such as Scaniverse, Polycam
 
 13
-00:00:48,346 --> 00:00:52,749
-Check the renderer, dynamic plugin, dataset, and
-portrait permissions separately.
+00:01:00,001 --> 00:01:01,005
+or KIRI Engine.
 
 14
-00:00:52,749 --> 00:00:56,712
-The instructor must confirm student access and
-classroom display.
+00:01:01,005 --> 00:01:05,687
+Export the reconstructed Gaussian scene in a
+compatible format and import it into Unity.
 
 15
-00:00:56,712 --> 00:01:01,116
-Do not redistribute the embedded SDK or performer
-without authorization.
+00:01:09,650 --> 00:01:14,860
+For clips such as Bass, follow the dataset links
+in the DualGS repository.
 
 16
-00:01:01,116 --> 00:01:05,079
-If needed, agree a permitted alternative with the
-instructor.
+00:01:14,860 --> 00:01:19,268
+Reconstruct the multi-view recordings with
+DualGS, then compress the appearance Gaussian
 
 17
-00:01:06,683 --> 00:01:11,678
-For the suggested laboratory scene, open the
-SuperSplat community and search dreams lab.
+00:01:19,268 --> 00:01:24,077
+PLY sequence with DynGsplat into DGS metadata and
+data blocks for Unity.
 
 18
-00:01:11,678 --> 00:01:15,904
-Verify the creator and reuse permission, and
-locate the scene download.
+00:01:24,077 --> 00:01:30,088
+A prepared DGS sequence from the authors or
+course team, when available, can be imported
 
 19
-00:01:15,904 --> 00:01:17,825
-Keep the complete SOG bundle.
+00:01:30,088 --> 00:01:30,489
+directly.
 
 20
-00:01:17,825 --> 00:01:21,282
-You are encouraged to use a different permitted
-environment.
+00:01:30,489 --> 00:01:33,695
+This demo uses an existing preprocessed Bass
+sequence.
 
 21
-00:01:21,282 --> 00:01:25,124
-Native Inria pretrained Gaussian models are
-another useful starting point.
+00:01:35,317 --> 00:01:38,118
+Create a 3D project in Unity Hub.
 
 22
-00:01:26,750 --> 00:01:30,430
-Import the complete SOG bundle into the
-SuperSplat web editor.
+00:01:38,118 --> 00:01:40,920
+This example uses the Built-in Render Pipeline.
 
 23
-00:01:30,430 --> 00:01:34,479
-Export an uncompressed PLY, with spherical
-harmonics up to degree three.
+00:01:51,317 --> 00:01:57,376
+For this desktop setup, select Direct3D 12 as the
+graphics API and Gamma as the color
 
 24
-00:01:34,479 --> 00:01:36,319
-Do not rename the extension.
+00:01:57,376 --> 00:01:57,755
+space.
 
 25
-00:01:36,319 --> 00:01:38,527
-Run the supplied PLY inspection tool.
+00:02:03,317 --> 00:02:07,895
+Open Package Manager and install Gsplat first,
+followed by DynGsplat.
 
 26
-00:01:38,527 --> 00:01:45,152
-A mesh or RGB point cloud is not a trained
-Gaussian asset, and a SOG export does not
+00:02:07,895 --> 00:02:13,847
+This example uses existing local packages: choose
+Install package from disk and select
 
 27
-00:01:45,152 --> 00:01:47,360
-restore precision already lost in compression.
+00:02:13,847 --> 00:02:15,679
+each package’s package.json file.
 
 28
-00:01:48,983 --> 00:01:54,462
-Use the official DualGS repository as the entry
-point to the paper, dataset, and
+00:02:23,317 --> 00:02:28,280
+Before importing the dynamic sequence, open
+Window, Asset Management, Addressables,
 
 29
-00:01:54,462 --> 00:01:55,244
-training workflow.
+00:02:28,280 --> 00:02:28,777
+Groups.
 
 30
-00:01:55,244 --> 00:02:00,723
-Cloning the repository does not automatically
-provide a ready to play Bass Unity asset.
+00:02:28,777 --> 00:02:33,244
+Create Addressables settings if they have not
+been initialized.
 
 31
-00:02:00,723 --> 00:02:05,810
-Obtain an authorized prepared sequence from the
-authors or course team, or follow
+00:02:38,317 --> 00:02:42,538
+Place the Gaussian PLY inside Assets and let
+Unity import it.
 
 32
-00:02:05,810 --> 00:02:07,375
-training and DynGsplat compression.
+00:02:42,538 --> 00:02:47,526
+Create an environment object, add a Gsplat
+Renderer, and assign the imported Gsplat
 
 33
-00:02:07,375 --> 00:02:11,289
-Raw recordings, checkpoints, and compressed
-playback files are different stages.
+00:02:47,526 --> 00:02:47,910
+Asset.
 
 34
-00:02:12,917 --> 00:02:17,571
-In Unity Hub, choose the tested Unity version, a
-three dimensional Built-in Render
+00:02:56,317 --> 00:03:01,361
+Import the complete performer folder, keeping the
+DGS metadata and all data blocks
 
 35
-00:02:17,571 --> 00:02:20,793
-Pipeline template, and a new project name and
-folder.
+00:03:01,361 --> 00:03:02,525
+together, outside Resources.
 
 36
-00:02:20,793 --> 00:02:24,015
-These are the creation settings for the desktop
-baseline.
+00:03:02,525 --> 00:03:07,569
+Add a DynGsplat Renderer to the performer object
+and assign the dynamic asset.
 
 37
-00:02:24,015 --> 00:02:29,027
-For this recording, we continue in the prepared
-GSdemo project instead of creating a
+00:03:15,317 --> 00:03:18,188
+Check the up axis, scale and ground alignment.
 
 38
-00:02:29,027 --> 00:02:30,817
-duplicate or repeating lengthy imports.
+00:03:18,188 --> 00:03:22,136
+Use a sign or another asymmetric landmark to
+check for mirroring.
 
 39
-00:02:32,450 --> 00:02:36,923
-Keep the desktop baseline on Direct3D twelve and
-Gamma color space.
+00:03:22,136 --> 00:03:26,084
+Place the performer’s feet on the floor and
+adjust its orientation.
 
 40
-00:02:36,923 --> 00:02:40,176
-Verify the graphics API before troubleshooting
-missing splats.
+00:03:35,317 --> 00:03:37,674
+Position the camera at the entrance.
 
 41
-00:02:40,176 --> 00:02:43,429
-Do not switch this baseline to Direct3D eleven.
+00:03:37,674 --> 00:03:42,390
+Create markers for the entrance, the studio
+viewpoint and the performance center.
 
 42
-00:02:43,429 --> 00:02:46,683
-Record your Unity version, pipeline, and package
-revisions.
+00:03:47,317 --> 00:03:50,352
+Add the tour controller to an empty GameObject.
 
 43
-00:02:46,683 --> 00:02:52,376
-These desktop settings are not a claim that the
-project already works on PICO.
+00:03:50,352 --> 00:03:54,526
+Assign the camera, environment, performer and
+location markers in the Inspector.
 
 44
-00:02:53,983 --> 00:02:56,479
-Open Window, Package Management, Package Manager.
+00:03:54,526 --> 00:03:59,078
+Set separate entry and exit distances to avoid
+flickering at the boundary.
 
 45
-00:02:56,479 --> 00:03:02,302
-In the plus menu, choose Install package from
-disk for an existing local package.
-
-46
-00:03:02,302 --> 00:03:07,708
-Select the Gsplat package dot json first, then
-DynGsplat slash package dot json.
-
-47
-00:03:07,708 --> 00:03:11,036
-The menu also offers a Git URL route.
-
-48
-00:03:11,036 --> 00:03:16,443
-We show the import entry without reinstalling or
-downloading packages in the prepared
-
-49
-00:03:16,443 --> 00:03:16,858
-project.
-
-50
-00:03:18,483 --> 00:03:20,305
-Confirm the installed package versions.
-
-51
-00:03:20,305 --> 00:03:26,134
-This project uses Gsplat one point one point zero
-and DynGsplat one point one point one,
-
-52
-00:03:26,134 --> 00:03:28,319
-with Addressables and Sharp Zip Lib.
-
-53
-00:03:28,319 --> 00:03:32,691
-Before importing a dynamic sequence, open the
-Addressables Groups window and create
-
-54
-00:03:32,691 --> 00:03:35,241
-settings if this is a new project.
-
-55
-00:03:35,241 --> 00:03:38,884
-Do not replace pinned packages blindly with
-arbitrary newer versions.
-
-56
-00:03:40,517 --> 00:03:44,680
-Place the inspected PLY inside Assets and wait
-for the Gaussian importer.
-
-57
-00:03:44,680 --> 00:03:47,455
-The imported file should become a Gsplat asset.
-
-58
-00:03:47,455 --> 00:03:52,658
-Add a Gsplat Renderer to an environment object,
-and assign that asset to its asset
-
-59
-00:03:52,658 --> 00:03:53,005
-field.
-
-60
-00:03:53,005 --> 00:03:55,434
-This is not a Mesh Filter workflow.
-
-61
-00:03:55,434 --> 00:04:00,290
-The prepared laboratory asset is shown here; use
-your own permitted scene for the
-
-62
-00:04:00,290 --> 00:04:00,637
-exercise.
-
-63
-00:04:02,250 --> 00:04:06,620
-After permission is confirmed and Addressables is
-initialized, copy the complete
-
-64
-00:04:06,620 --> 00:04:09,004
-performer folder into Assets, outside Resources.
-
-65
-00:04:09,004 --> 00:04:12,579
-Keep the DGS metadata and every DGS block
-together.
-
-66
-00:04:12,579 --> 00:04:16,155
-The importer creates the dynamic asset and block
-assets.
-
-67
-00:04:16,155 --> 00:04:21,717
-Add a DynGsplat Renderer to the performer object
-and assign the dynamic asset reference.
-
-68
-00:04:21,717 --> 00:04:24,895
-Missing blocks are not fixed by renaming files.
-
-69
-00:04:26,517 --> 00:04:29,987
-Check up direction, handedness, scale, and ground
-alignment together.
-
-70
-00:04:29,987 --> 00:04:34,615
-Use readable signs or another asymmetric landmark
-to detect a mirrored scene.
-
-71
-00:04:34,615 --> 00:04:40,399
-Align the performer using the feet and pivot, and
-rotate to the intended front view.
-
-72
-00:04:40,399 --> 00:04:44,256
-Do not copy the laboratory transform numbers into
-another scene.
-
-73
-00:04:44,256 --> 00:04:48,112
-Preserve the saved camera pose, and disable
-competing orbit controllers.
-
-74
-00:04:49,717 --> 00:04:54,306
-Add the tour controller and connect the camera,
-environment, performer, entrance, studio
-
-75
-00:04:54,306 --> 00:04:55,836
-viewpoint, and performance center.
-
-76
-00:04:55,836 --> 00:05:00,426
-Set separate entry and exit radii to avoid
-flicker at the boundary.
-
-77
-00:05:00,426 --> 00:05:05,015
-This scene uses six and seven scene units, not
-necessarily calibrated meters.
-
-78
-00:05:05,015 --> 00:05:09,222
-Adjust these markers and the walking boundary for
-your own environment.
-
-79
-00:05:10,850 --> 00:05:15,742
-Here is the navigation idea, without a line by
-line coding lesson.
-
-80
-00:05:15,742 --> 00:05:21,041
-Flatten the camera heading, construct the right
-vector, and combine forward and sideways
-
-81
-00:05:21,041 --> 00:05:21,449
-input.
-
-82
-00:05:21,449 --> 00:05:22,672
-Normalize diagonal movement.
-
-83
-00:05:22,672 --> 00:05:27,156
-The controller then validates the desired
-position against the walking boundary.
-
-84
-00:05:28,783 --> 00:05:31,692
-Presence uses the visitor position and two radii.
-
-85
-00:05:31,692 --> 00:05:37,146
-The performer becomes visible only when the user
-is inside and the asset is ready.
-
-86
-00:05:37,146 --> 00:05:39,691
-Playback follows presence and the pause intent.
-
-87
-00:05:39,691 --> 00:05:42,236
-Teleport simply applies the saved studio pose.
-
-88
-00:05:42,236 --> 00:05:46,962
-The full controller handles camera layers,
-readiness, and the English buttons; we will
-
-89
-00:05:46,962 --> 00:05:49,144
-not implement those details on screen.
-
-90
-00:05:50,750 --> 00:05:54,516
-In Play mode, the camera starts at the saved
-entrance.
-
-91
-00:05:54,516 --> 00:05:56,400
+00:04:09,317 --> 00:04:11,719
 Movement follows the camera heading.
 
-92
-00:05:56,400 --> 00:06:00,543
-The performer stays hidden while we are outside
-the studio range.
+46
+00:04:11,719 --> 00:04:16,042
+The proximity check controls the performer’s
+visibility and playback.
 
-93
-00:06:02,150 --> 00:06:03,991
-Teleport to the studio viewpoint.
+47
+00:04:16,042 --> 00:04:18,444
+Teleportation applies the saved viewpoint.
 
-94
-00:06:03,991 --> 00:06:08,409
-Entering the range reveals the Bass performer,
-and the recorded volumetric sequence
+48
+00:04:23,317 --> 00:04:24,070
+Press Play.
 
-95
-00:06:08,409 --> 00:06:08,777
-loops.
+49
+00:04:24,070 --> 00:04:29,347
+We start at the entrance, move through the
+environment, and teleport to the studio.
 
-96
-00:06:08,777 --> 00:06:12,459
-Check the front view, the feet, and the
-environment alignment.
+50
+00:04:29,347 --> 00:04:32,739
+The performer appears when we enter the viewing
+range.
 
-97
-00:06:12,459 --> 00:06:15,773
-The pause control stops the sequence and resumes
-it.
+51
+00:04:36,317 --> 00:04:39,614
+Move around the performer while the sequence
+keeps playing.
 
-98
-00:06:15,773 --> 00:06:19,086
-This is a recording, not a conversational AI
-agent.
+52
+00:04:39,614 --> 00:04:42,544
+View it from the front, side and rear.
 
-99
-00:06:23,150 --> 00:06:26,898
-Return to the entrance and confirm that the
-performer is hidden again.
-
-100
-00:06:26,898 --> 00:06:30,333
-Repeat entry and exit checks before moving on to
-the headset.
-
-101
-00:06:31,950 --> 00:06:34,458
-Now, bring this scene into VR.
-
-102
-00:06:34,458 --> 00:06:37,802
-Reuse the PICO workflow from the earlier lessons.
-
-103
-00:06:37,802 --> 00:06:41,983
-Install and validate your experience as a
-standalone headset application.
+53
+00:04:42,544 --> 00:04:46,574
+Notice how the person, instrument and background
+change with the viewpoint.

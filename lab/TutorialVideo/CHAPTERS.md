@@ -1,22 +1,23 @@
-# GSdemo tutorial chapters
+# Video chapters
 
-- 00:00 — Digital Humans in Gaussian Environments
-- 00:19 — Find the official Unity packages
-- 00:43 — Permission comes before distribution
-- 01:06 — Choose your static environment
-- 01:26 — SOG is not the Unity import file
-- 01:48 — Get an authorized dynamic sequence
-- 02:12 — Create a desktop baseline in Unity Hub
-- 02:31 — Match the tested desktop configuration
-- 02:53 — Use Package Manager, not Assets/Import Package
-- 03:17 — Verify dependencies and initialize Addressables
-- 03:39 — Import the static Gaussian PLY
-- 04:01 — Keep dynamic metadata and blocks together
-- 04:25 — Calibrate one shared coordinate space
-- 04:49 — Wire the scene references
-- 05:10 — Interaction logic: camera-relative navigation
-- 05:28 — Interaction logic: presence and teleport
-- 05:50 — Start at the entrance
-- 06:01 — Teleport, reveal and loop the performer
-- 06:22 — Return and confirm deactivation
-- 06:31 — Now, bring this scene into VR.
+- 00:00 — Gaussian Environments + Volumetric Humans
+- 00:12 — Project repositories
+- 00:24 — Option 1 — Official pretrained models
+- 00:32 — Option 2 — SuperSplat community
+- 00:42 — Export uncompressed PLY
+- 00:54 — Option 3 — Capture your own scene
+- 01:09 — Get volumetric clips such as Bass
+- 01:34 — Create the Unity project
+- 01:50 — Configure desktop rendering
+- 02:02 — Install the Unity packages
+- 02:22 — Initialize Addressables
+- 02:37 — Import the environment
+- 02:55 — Import the volumetric performer
+- 03:14 — Align the scene and performer
+- 03:34 — Set the camera and location markers
+- 03:46 — Connect the tour controller
+- 04:08 — Interaction logic
+- 04:22 — Enter the lab and reveal the performer
+- 04:35 — View the performance in 3D
+- 04:50 — Pause, resume and return
+- 04:58 — Now, bring your scene into VR.

@@ -1,44 +1,35 @@
-# Student Exercise: Bring a Gaussian Scene into VR
+# Student Exercise: Bring Your Scene into VR
 
-**Course:** Interactive AI Systems: Design & Implementation
+**Goal:** Make a small Unity VR experience and try it on **PICO** using the workflow taught earlier.
 
-## Your goal
-
-Build a small VR experience in Unity, install it on your **PICO headset**, and make it run as a standalone application. Reuse the Unity/PICO workflow from the earlier lessons.
-
-**You may choose your Unity version, render pipeline, XR tools and rendering plugins.** The instructor's demo settings are examples, not assignment requirements. A simple working VR application is a good result; start small rather than trying to reproduce the entire laboratory.
+**A standalone build or PC streaming are both welcome.** Choose any Unity version, render pipeline, XR tools or permitted plugins that work for you. Getting your own VR experience running is already a good achievement.
 
 ## What to try
 
-1. Choose a permitted Gaussian environment. You are encouraged to use a different scene from the instructor's demo.
-2. Import it into Unity and check its orientation, scale and viewing position.
-3. If feasible and permitted, add a recorded volumetric performer such as Bass. Move around it and view it from different sides to show that it is three-dimensional, not a flat video.
-4. Add one simple interaction: teleport, an information panel, proximity activation, or another useful action.
-5. Build, install and try the application on PICO. Check that head tracking and your intended controls work.
+1. Import a permitted Gaussian scene and check its orientation, scale and viewpoint. You are encouraged to choose a different environment.
+2. If feasible and permitted, add a volumetric performer such as Bass. Move around it and view it from different sides to show that it is 3D, not flat video.
+3. Try one simple interaction: teleport, an information panel or proximity activation.
+4. Experience your scene in VR on PICO, **through a build or streaming**. Check head tracking and your intended controls.
 
-If a large scene or dynamic performer does not run well, reduce the scope. A smaller working VR scene is better than a complex project that cannot run. Explain any omitted features; ask the instructor if you need a different approach.
+Start small and simplify when needed. A small working scene is better than an unfinished complex project. Explain any features you could not get working.
 
-## Where to get resources
+## Resources
 
-- **Static renderer:** [Gsplat Unity](https://github.com/wuyize25/gsplat-unity).
-- **Dynamic playback plugin:** [DynGsplat Unity](https://github.com/HiFi-Human/DynGsplat-unity).
-- **Performer/data workflow:** [DualGS](https://github.com/HiFi-Human/DualGS) and the [official dataset instructions](https://github.com/xyi1023/DualGS_Dataset). Cloning the code does not automatically provide a ready-to-play Bass Unity asset; use an authorized prepared sequence or follow the authors' training/export/compression workflow.
-- **Suggested environment:** search **dreams lab** in the [SuperSplat community](https://superspl.at/). Check the scene identity, creator and reuse permission.
-- **SOG to PLY:** open the complete bundle in the [SuperSplat editor](https://superspl.at/editor), then export **uncompressed PLY**. For this demo's importer, use SH degree 0–3 and check the Gaussian attributes. Other plugins may accept other formats. Do not simply rename the file extension.
-- **Other scenes:** [Inria 3DGS](https://github.com/graphdeco-inria/gaussian-splatting) links pretrained models; you can also search Hugging Face or use your own permitted capture.
+- **Renderer:** [Gsplat Unity](https://github.com/wuyize25/gsplat-unity).
+- **Dynamic playback:** [DynGsplat Unity](https://github.com/HiFi-Human/DynGsplat-unity).
+- **Performer/data:** [DualGS](https://github.com/HiFi-Human/DualGS) and [dataset instructions](https://github.com/xyi1023/DualGS_Dataset). The linked Bass capture is `4K_Actor4_Bass`. Raw multi-view data needs DualGS reconstruction and DynGsplat compression to become DGS metadata plus data blocks. A prepared DGS sequence can be imported directly.
+- **Suggested scene:** search **dreams lab** in the [SuperSplat community](https://superspl.at/). Verify the creator and reuse permission.
+- **SOG to PLY:** import the full bundle in the [SuperSplat editor](https://superspl.at/editor) and export uncompressed PLY. This demo's importer accepts Gaussian PLY with SH degree 0–3; other plugins may support other formats.
+- **Alternatives:** [Inria Gaussian models](https://github.com/graphdeco-inria/gaussian-splatting), Hugging Face, or your own permitted capture.
 
-Use only assets and plugins you are allowed to use and share. Confirm DynGsplat student-use and performer-display permissions with the instructor before using that route. Do not redistribute restricted SDKs, private scans or portraits without permission.
+Check asset/plugin permissions before use or sharing. Confirm DynGsplat student-use and performer-display permissions with the instructor; do not redistribute restricted SDKs or portraits without permission.
 
-## Show your result
+## Share what you made
 
-- Provide an installable build/APK, within the permitted sharing scope.
-- Record a short video **on the headset** showing that the application runs and demonstrating your interaction. Desktop Play mode or PC streaming alone is not the standalone result.
-- Add a short **English README**: what you built, how to install/run it, where the assets/plugins came from, and any limitations. A project/source link is useful where sharing is permitted.
+- A short video of your scene being experienced in VR on PICO; **build and streaming demonstrations both count**.
+- Your playable build **or** project/run instructions, where sharing is permitted. An APK is optional.
+- A short **English README**: what you made, how to try it, resource sources and any limitations.
 
-No specific Unity version, renderer, numerical performance target or research study is required. The main success is a VR application that you can install and run on PICO.
+No fixed software version, numerical performance target or research evaluation is required. **The main success is making something that works in VR.**
 
-## Demonstration
-
-[English tutorial video](TutorialVideo/GSdemo_Tutorial_EN.mp4) · [Video chapters](TutorialVideo/CHAPTERS.md)
-
-The instructor demonstration is a desktop example, not an already verified PICO build. Original signage in the captured lab may contain Chinese; keep your own controls and explanatory text in English.
+[English demo video](TutorialVideo/GSdemo_Tutorial_EN.mp4) · [Chapters](TutorialVideo/CHAPTERS.md)
