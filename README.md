@@ -12,7 +12,7 @@ Two back-to-back guest segments (~30 min each):
 
 ## Hands-on lab (after class)
 
-Bring a Gaussian scene into VR and run it on your PICO headset. Linked from the last slide of Part 2.
+Bring a Gaussian scene and a volumetric performer into VR. Linked from the last slide of Part 2.
 
 - 📄 **Lab guide:** [lab/STUDENT_LAB_GUIDE.md](lab/STUDENT_LAB_GUIDE.md)
 - 🎬 **Tutorial video (5:05):** [lab/TutorialVideo/GSdemo_Tutorial_EN.mp4](lab/TutorialVideo/GSdemo_Tutorial_EN.mp4) · [chapters](lab/TutorialVideo/CHAPTERS.md) · [subtitles (.srt)](lab/TutorialVideo/GSdemo_Tutorial_EN.srt)
