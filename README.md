@@ -10,12 +10,12 @@ Two back-to-back guest segments (~30 min each):
 | 1 | **Digital Humans: From Hand-Crafted to Generated** — Yao-Dong Yang | https://politeyoung.github.io/digital-humans-lecture/ |
 | 2 | **Digital Spaces** (DREAMS) | https://politeyoung.github.io/digital-humans-lecture/digital-spaces-deck/ |
 
-## Hands-on lab (after class)
+## Exercise (after class)
 
 Bring a Gaussian scene and a volumetric performer into VR. Linked from the last slide of Part 2.
 
-- 📄 **Lab guide:** [lab/STUDENT_LAB_GUIDE.md](lab/STUDENT_LAB_GUIDE.md)
-- 🎬 **Tutorial video (5:05):** [lab/TutorialVideo/GSdemo_Tutorial_EN.mp4](lab/TutorialVideo/GSdemo_Tutorial_EN.mp4) · [chapters](lab/TutorialVideo/CHAPTERS.md) · [subtitles (.srt)](lab/TutorialVideo/GSdemo_Tutorial_EN.srt)
+- 📄 **Exercise guide:** [exercise/EXERCISE_GUIDE.md](exercise/EXERCISE_GUIDE.md)
+- 🎬 **Tutorial video (5:05):** [exercise/TutorialVideo/GSdemo_Tutorial_EN.mp4](exercise/TutorialVideo/GSdemo_Tutorial_EN.mp4) · [chapters](exercise/TutorialVideo/CHAPTERS.md) · [subtitles (.srt)](exercise/TutorialVideo/GSdemo_Tutorial_EN.srt)
 
 ## Presenting the slides
 
