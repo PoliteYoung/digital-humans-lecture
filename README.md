@@ -19,7 +19,7 @@ Bring a Gaussian scene and a volumetric performer into VR. Linked from the last 
 
 ## Presenting the slides
 
-Part 1: open `index.html`. Part 2: open `digital-spaces-deck/index.html` (single self-contained file; see its README for keys and notes). Both work offline in Chrome or Edge.
+Part 1: open `index.html`. Part 2: open `digital-spaces-deck/index.html` (a single self-contained file). Both work offline in Chrome or Edge.
 
 | Key | Action |
 |---|---|
@@ -28,6 +28,7 @@ Part 1: open `index.html`. Part 2: open `digital-spaces-deck/index.html` (single
 | S | speaker view (notes + timer) |
 | F | full screen |
 | Esc / O | overview |
+| T | switch light / dark theme (Part 1; light is the default) |
 | B | black screen |
 
 Export a PDF backup: open `index.html?print-pdf` → Print → Save as PDF (landscape, no margins, background graphics on).

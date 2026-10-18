@@ -8,11 +8,18 @@
 <link rel="stylesheet" href="lib/dist/reveal.css">
 <style>
 :root{
+  --bg:#f6f7f9; --panel:#ffffff; --panel2:#eef1f5; --line:#d3d9e0;
+  --text:#1b1f24; --muted:#3f4a55; --dim:#56616c;
+  --rep:#0b8a80; --drv:#c25e00; --hot:#cc1f55;
+  --on-rep:#ffffff; --on-drv:#ffffff; --empty:#eceff3; --seam:#ffffff;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+:root[data-theme="dark"]{
   --bg:#0d1117; --panel:#161b22; --panel2:#1c2430; --line:#30363d;
   --text:#e6edf3; --muted:#8b949e; --dim:#6e7681;
   --rep:#3dd6c6; --drv:#f5a623; --hot:#ff6e8c;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
-  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --on-rep:#06201d; --on-drv:#2a1800; --empty:#11161d; --seam:#e6edf3;
 }
 html,body,.reveal-viewport{background:var(--bg);--r-background-color:#0d1117;}
 .reveal{font-family:var(--sans);font-size:40px;color:var(--text);line-height:1.35;}
@@ -45,8 +52,8 @@ html,body,.reveal-viewport{background:var(--bg);--r-background-color:#0d1117;}
 .map .lab{color:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-size:14px;text-align:right;}
 .map .row{display:flex;gap:6px;}
 .map .c{padding:5px 10px;border-radius:6px;border:1px solid var(--line);color:var(--dim);}
-.map .r.on{background:var(--rep);border-color:var(--rep);color:#06201d;font-weight:700;}
-.map .d.on{background:var(--drv);border-color:var(--drv);color:#2a1800;font-weight:700;}
+.map .r.on{background:var(--rep);border-color:var(--rep);color:var(--on-rep);font-weight:700;}
+.map .d.on{background:var(--drv);border-color:var(--drv);color:var(--on-drv);font-weight:700;}
 
 /* video slots */
 .vid{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
@@ -80,7 +87,7 @@ svg.gauss{width:100%;height:auto;max-height:900px;}
 .st-layer{position:absolute;inset:0;}
 .st-layer svg,.st-layer img{width:100%;height:100%;display:block;object-fit:cover;}
 .st-seams{position:absolute;inset:0;width:100%;height:100%;}
-.st-seams line{stroke:#e6edf3;stroke-width:3;vector-effect:non-scaling-stroke;}
+.st-seams line{stroke:var(--seam);stroke-width:3;vector-effect:non-scaling-stroke;}
 .st-labels{position:relative;height:40px;margin-top:14px;font-size:26px;font-weight:600;color:var(--muted);}
 .st-labels span{position:absolute;top:0;white-space:nowrap;}
 .tri{display:flex;align-items:center;gap:6px;}
@@ -156,7 +163,7 @@ svg.arm{width:100%;height:auto;display:block;}
 .grid div{padding:14px 14px;border-radius:10px;background:var(--panel);min-height:44px;display:flex;align-items:center;}
 .grid .hd{background:transparent;color:var(--drv);font-weight:700;justify-content:center;font-size:24px;text-transform:uppercase;letter-spacing:.05em;}
 .grid .rh{background:transparent;color:var(--rep);font-weight:700;justify-content:flex-end;}
-.grid .e{background:#11161d;}
+.grid .e{background:var(--empty);}
 .grid .f{border:2px solid var(--hot);color:var(--text);font-weight:700;}
 .grid .x{color:var(--muted);}
 
@@ -239,6 +246,13 @@ svg.arm{width:100%;height:auto;display:block;}
 .p10-txt{padding-left:30px;}
 .p10-txt h3{font-size:38px;margin-bottom:10px;}
 .p10-txt p{font-size:28px;margin:0 0 6px;}
+
+
+/* light theme: small text a bit larger/darker for projectors */
+:root:not([data-theme="dark"]) .cite{font-size:22px;color:var(--muted);}
+:root:not([data-theme="dark"]) .vid-cap{color:var(--muted);}
+:root:not([data-theme="dark"]) .map{font-size:19px;}
+:root:not([data-theme="dark"]) .map .lab{font-size:15px;}
 
 /* print-pdf */
 html.print-pdf .reveal .slides section{height:1080px !important;}
@@ -524,10 +538,10 @@ html.print-pdf .reveal .slides section{height:1080px !important;}
   <div class="vs">
     <div class="card">
       <svg viewBox="0 0 300 140">
-        <rect x="10" y="10" width="280" height="120" rx="8" fill="#1c2430" stroke="#6e7681" stroke-width="3"/>
-        <g fill="#0d1117"><rect x="22" y="18" width="12" height="9" rx="2"/><rect x="62" y="18" width="12" height="9" rx="2"/><rect x="102" y="18" width="12" height="9" rx="2"/><rect x="142" y="18" width="12" height="9" rx="2"/><rect x="182" y="18" width="12" height="9" rx="2"/><rect x="222" y="18" width="12" height="9" rx="2"/><rect x="262" y="18" width="12" height="9" rx="2"/><rect x="22" y="113" width="12" height="9" rx="2"/><rect x="62" y="113" width="12" height="9" rx="2"/><rect x="102" y="113" width="12" height="9" rx="2"/><rect x="142" y="113" width="12" height="9" rx="2"/><rect x="182" y="113" width="12" height="9" rx="2"/><rect x="222" y="113" width="12" height="9" rx="2"/><rect x="262" y="113" width="12" height="9" rx="2"/></g>
-        <g fill="#0d1117" stroke="#30363d" stroke-width="2"><rect x="22" y="34" width="78" height="72" rx="4"/><rect x="111" y="34" width="78" height="72" rx="4"/><rect x="200" y="34" width="78" height="72" rx="4"/></g>
-        <g stroke="#3dd6c6" stroke-width="4" stroke-linecap="round" fill="none"><circle cx="61" cy="50" r="7"/><line x1="61" y1="57" x2="61" y2="82"/><line x1="61" y1="64" x2="48" y2="74"/><line x1="61" y1="64" x2="74" y2="56"/><line x1="61" y1="82" x2="53" y2="100"/><line x1="61" y1="82" x2="69" y2="100"/>
+        <rect x="10" y="10" width="280" height="120" rx="8" style="fill:var(--panel2);stroke:var(--dim)"  stroke-width="3"/>
+        <g style="fill:var(--bg)"><rect x="22" y="18" width="12" height="9" rx="2"/><rect x="62" y="18" width="12" height="9" rx="2"/><rect x="102" y="18" width="12" height="9" rx="2"/><rect x="142" y="18" width="12" height="9" rx="2"/><rect x="182" y="18" width="12" height="9" rx="2"/><rect x="222" y="18" width="12" height="9" rx="2"/><rect x="262" y="18" width="12" height="9" rx="2"/><rect x="22" y="113" width="12" height="9" rx="2"/><rect x="62" y="113" width="12" height="9" rx="2"/><rect x="102" y="113" width="12" height="9" rx="2"/><rect x="142" y="113" width="12" height="9" rx="2"/><rect x="182" y="113" width="12" height="9" rx="2"/><rect x="222" y="113" width="12" height="9" rx="2"/><rect x="262" y="113" width="12" height="9" rx="2"/></g>
+        <g style="fill:var(--bg);stroke:var(--line)"  stroke-width="2"><rect x="22" y="34" width="78" height="72" rx="4"/><rect x="111" y="34" width="78" height="72" rx="4"/><rect x="200" y="34" width="78" height="72" rx="4"/></g>
+        <g style="stroke:var(--rep)" stroke-width="4" stroke-linecap="round" fill="none"><circle cx="61" cy="50" r="7"/><line x1="61" y1="57" x2="61" y2="82"/><line x1="61" y1="64" x2="48" y2="74"/><line x1="61" y1="64" x2="74" y2="56"/><line x1="61" y1="82" x2="53" y2="100"/><line x1="61" y1="82" x2="69" y2="100"/>
         <circle cx="150" cy="50" r="7"/><line x1="150" y1="57" x2="150" y2="82"/><line x1="150" y1="64" x2="137" y2="60"/><line x1="150" y1="64" x2="163" y2="48"/><line x1="150" y1="82" x2="142" y2="100"/><line x1="150" y1="82" x2="158" y2="100"/>
         <circle cx="239" cy="50" r="7"/><line x1="239" y1="57" x2="239" y2="82"/><line x1="239" y1="64" x2="226" y2="52"/><line x1="239" y1="64" x2="252" y2="44"/><line x1="239" y1="82" x2="231" y2="100"/><line x1="239" y1="82" x2="247" y2="100"/></g>
       </svg>
@@ -536,9 +550,9 @@ html.print-pdf .reveal .slides section{height:1080px !important;}
     </div>
     <div class="card">
       <svg viewBox="0 0 300 140">
-        <g stroke="#e6edf3" stroke-width="4" stroke-linecap="round"><line x1="100" y1="12" x2="200" y2="12"/><line x1="150" y1="4" x2="150" y2="26"/></g>
-        <g stroke="#6e7681" stroke-width="1.5" stroke-dasharray="3 3"><line x1="150" y1="12" x2="150" y2="36"/><line x1="100" y1="12" x2="112" y2="66"/><line x1="200" y1="12" x2="190" y2="50"/><line x1="125" y1="12" x2="132" y2="132"/><line x1="175" y1="12" x2="168" y2="132"/></g>
-        <g stroke="#f5a623" stroke-width="5" stroke-linecap="round" fill="none"><circle cx="150" cy="46" r="10"/><line x1="150" y1="56" x2="150" y2="96"/><line x1="150" y1="68" x2="112" y2="66"/><line x1="150" y1="68" x2="190" y2="50"/><line x1="150" y1="96" x2="132" y2="132"/><line x1="150" y1="96" x2="168" y2="132"/></g>
+        <g style="stroke:var(--text)" stroke-width="4" stroke-linecap="round"><line x1="100" y1="12" x2="200" y2="12"/><line x1="150" y1="4" x2="150" y2="26"/></g>
+        <g style="stroke:var(--dim)" stroke-width="1.5" stroke-dasharray="3 3"><line x1="150" y1="12" x2="150" y2="36"/><line x1="100" y1="12" x2="112" y2="66"/><line x1="200" y1="12" x2="190" y2="50"/><line x1="125" y1="12" x2="132" y2="132"/><line x1="175" y1="12" x2="168" y2="132"/></g>
+        <g style="stroke:var(--drv)" stroke-width="5" stroke-linecap="round" fill="none"><circle cx="150" cy="46" r="10"/><line x1="150" y1="56" x2="150" y2="96"/><line x1="150" y1="68" x2="112" y2="66"/><line x1="150" y1="68" x2="190" y2="50"/><line x1="150" y1="96" x2="132" y2="132"/><line x1="150" y1="96" x2="168" y2="132"/></g>
       </svg>
       <h3 class="drv">A puppet<small>DEGAS · 3D digital human</small></h3>
       <p>Gaussians attached to an <b>SMPL</b> body → follows <b>new</b> poses.</p>
@@ -673,6 +687,19 @@ html.print-pdf .reveal .slides section{height:1080px !important;}
   var isReceiver = /receiver/i.test(q);       // speaker-view preview iframes
   var isPrint = /print-pdf/i.test(q);
 
+  // ---- Theme: light by default (projector-friendly); press T to toggle dark ----
+  var THEME_KEY='dh-deck-theme';
+  function getTheme(){ try{ return localStorage.getItem(THEME_KEY); }catch(e){ return null; } }
+  function setTheme(t){ document.documentElement.setAttribute('data-theme',t); try{ localStorage.setItem(THEME_KEY,t); }catch(e){} }
+  var qt=(location.search.match(/[?&]theme=(light|dark)/)||[])[1];
+  document.documentElement.setAttribute('data-theme', qt || getTheme() || 'light');
+  window.addEventListener('keydown',function(e){
+    if((e.key==='t'||e.key==='T') && !e.metaKey && !e.ctrlKey && !e.altKey){
+      setTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
+    }
+  });
+  window.addEventListener('storage',function(e){ if(e.key===THEME_KEY && e.newValue) document.documentElement.setAttribute('data-theme',e.newValue); });
+
   // ---- Representation x Driving corner map ----
   var REP = ['Mesh','2D Pixels','Implicit','Gaussians'];
   var DRV = ['Skeleton','Parametric','Generative'];
@@ -739,7 +766,7 @@ html.print-pdf .reveal .slides section{height:1080px !important;}
   function goPart2(){
     if(leaving) return; leaving=true;
     var f=document.createElement('div');
-    f.style.cssText='position:fixed;inset:0;background:#0d1117;opacity:0;transition:opacity .35s;z-index:99999';
+    f.style.cssText='position:fixed;inset:0;background:'+getComputedStyle(document.body).backgroundColor+';opacity:0;transition:opacity .35s;z-index:99999';
     document.body.appendChild(f); requestAnimationFrame(function(){ f.style.opacity=1; });
     setTimeout(function(){ location.href=PART2; },360);
   }
