@@ -11,7 +11,7 @@
 
 ## Resources
 
-- **Tutorial video (5 min):** [GSdemo_Tutorial_EN.mp4](TutorialVideo/GSdemo_Tutorial_EN.mp4) · [Chapters](TutorialVideo/CHAPTERS.md)
+- **Tutorial video (3 min):** [GSdemo_Tutorial_EN.mp4](TutorialVideo/GSdemo_Tutorial_EN.mp4) · [Chapters](TutorialVideo/CHAPTERS.md)
 - **Gaussian renderer:** [Gsplat Unity](https://github.com/wuyize25/gsplat-unity)
 - **Volumetric playback:** [DynGsplat Unity](https://github.com/HiFi-Human/DynGsplat-unity)
 - **Performer:** [DualGS](https://github.com/HiFi-Human/DualGS) (code and training) + [DualGS dataset](https://github.com/xyi1023/DualGS_Dataset). The demo's Bass is `4K_Actor4_Bass`. Train with DualGS, compress with DynGsplat into a `.dgs` file plus data blocks, then import into Unity.

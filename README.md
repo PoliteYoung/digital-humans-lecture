@@ -15,7 +15,7 @@ Two back-to-back guest segments (~30 min each):
 Bring a Gaussian scene and a volumetric performer into VR. Linked from the last slide of Part 2.
 
 - 📄 **Exercise guide:** [exercise/EXERCISE_GUIDE.md](exercise/EXERCISE_GUIDE.md)
-- 🎬 **Tutorial video (5:05):** [exercise/TutorialVideo/GSdemo_Tutorial_EN.mp4](exercise/TutorialVideo/GSdemo_Tutorial_EN.mp4) · [chapters](exercise/TutorialVideo/CHAPTERS.md) · [subtitles (.srt)](exercise/TutorialVideo/GSdemo_Tutorial_EN.srt)
+- 🎬 **Tutorial video (3:16):** [exercise/TutorialVideo/GSdemo_Tutorial_EN.mp4](exercise/TutorialVideo/GSdemo_Tutorial_EN.mp4) · [chapters](exercise/TutorialVideo/CHAPTERS.md) · [subtitles (.srt)](exercise/TutorialVideo/GSdemo_Tutorial_EN.srt)
 
 ## Presenting the slides
 

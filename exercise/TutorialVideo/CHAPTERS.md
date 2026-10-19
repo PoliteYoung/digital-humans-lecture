@@ -1,23 +1,23 @@
-# Video chapters
+# Speech-led edit
 
 - 00:00 — Gaussian Environments + Volumetric Humans
-- 00:12 — Project repositories
-- 00:24 — Option 1 — Official pretrained models
-- 00:32 — Option 2 — SuperSplat community
-- 00:42 — Export uncompressed PLY
-- 00:54 — Option 3 — Capture your own scene
-- 01:09 — Get volumetric clips such as Bass
-- 01:34 — Create the Unity project
-- 01:50 — Configure desktop rendering
-- 02:02 — Install the Unity packages
-- 02:22 — Initialize Addressables
-- 02:37 — Import the environment
-- 02:55 — Import the volumetric performer
-- 03:14 — Align the scene and performer
-- 03:34 — Set the camera and location markers
-- 03:46 — Connect the tour controller
-- 04:08 — Interaction logic
-- 04:22 — Enter the lab and reveal the performer
-- 04:35 — View the performance in 3D
-- 04:50 — Pause, resume and return
-- 04:58 — Now, bring your scene into VR.
+- 00:08 — Project repositories
+- 00:17 — Option 1 — Official pretrained models
+- 00:23 — Option 2 — SuperSplat community
+- 00:29 — Export uncompressed PLY
+- 00:36 — Option 3 — Capture your own scene
+- 00:47 — Get volumetric clips such as Bass
+- 01:11 — Create the Unity project
+- 01:17 — Configure desktop rendering
+- 01:23 — Install the Unity packages
+- 01:35 — Initialize Addressables
+- 01:45 — Import the environment
+- 01:55 — Import the volumetric performer
+- 02:06 — Align the scene and performer
+- 02:17 — Set the camera and location markers
+- 02:24 — Connect the tour controller
+- 02:36 — Interaction logic
+- 02:45 — Enter the lab and reveal the performer
+- 02:54 — View the performance in 3D
+- 03:09 — Pause, resume and return
+- 03:13 — Now, bring your scene into VR.
